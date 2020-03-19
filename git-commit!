@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+# Opens a server instances of emacs for writting a commit message
+
+tmux neww -n "Commit Msg" 'emacs --eval "(server-start)"'
+sleep 2 # the time is takes emacs server to start up
+git commit
+
