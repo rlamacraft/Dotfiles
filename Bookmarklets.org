@@ -1,0 +1,24 @@
+#+TITLE: Bookmarklets
+#+AUTHOR: Robert Lamacraft
+#+EMAIL: hello@rlamacraft.uk
+
+Here are some generally useful bookmarklets. Simply wrap each in the following code and save in your browser of choice.
+
+#+BEGIN_SRC javascript
+javascript:(function(){
+
+})()
+#+END_SRC
+
+* Video/Audio
+
+** Playback Speed
+#+BEGIN_SRC javascript
+document.getElementsByTagName('video')[0].playbackRate = prompt("speed")
+#+END_SRC
+*** Description
+- Asks the user for the desired speed
+- Expects a number from 0.0 to 1.0 for slower speed
+- Greater than 1.0 for faster speed
+*** Assumptions
+- There is only one video player on the page
