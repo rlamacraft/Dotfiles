@@ -22,3 +22,12 @@ document.getElementsByTagName('video')[0].playbackRate = prompt("speed")
 - Greater than 1.0 for faster speed
 *** Assumptions
 - There is only one video player on the page
+
+** Picture-in-picture
+#+BEGIN_SRC javascript
+document.getElementsByTagName('video')[0].webkitSetPresentationMode("picture-in-picture")
+#+END_SRC
+*** Description
+- Inside of Safari, takes the video player and puts it into picture-in-picture mode
+*** Assumptions
+- There is only one video player on the page
