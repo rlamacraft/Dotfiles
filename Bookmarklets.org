@@ -14,14 +14,15 @@ javascript:(function(){
 
 ** Playback Speed
 #+BEGIN_SRC javascript
-document.getElementsByTagName('video')[0].playbackRate = prompt("speed")
+speed = prompt("speed");
+[...document.getElementsByTagName('video')].forEach(v => v.playbackRate = speed);
 #+END_SRC
 *** Description
 - Asks the user for the desired speed
 - Expects a number from 0.0 to 1.0 for slower speed
 - Greater than 1.0 for faster speed
 *** Assumptions
-- There is only one video player on the page
+- If there are multiple video players on the page, then they should run at the same speed
 
 ** Picture-in-picture
 #+BEGIN_SRC javascript
