@@ -1,0 +1,10 @@
+#+TITLE: MacOS Preferences
+#+AUTHOR: Robert Lamacraft
+#+EMAIL: hello@rlamacraft.uk
+
+* Charging sound
+- Play the iOS charging sound when the power cord is connected
+#+BEGIN_SRC sh
+defaults write com.apple.PowerChime ChimeOnAllHardware -bool true; open /System/Library/CoreServices/PowerChime.app &
+#+END_SRC
+- source: [[https://osxdaily.com/2015/04/15/play-chime-sound-effect-when-macbook-power-connects/][osxdaily]]
