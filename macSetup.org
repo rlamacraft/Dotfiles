@@ -26,3 +26,7 @@ defaults write com.apple.PowerChime ChimeOnAllHardware -bool true; open /System/
 #+end_src
     - Save is as "Emacsclient", perhaps in this cloned repo in a 'bin' directory
     - Add it to the Dock, perhaps with a pretty icon
+
+* Shortcuts
+** System Preferences
+  - In System Preferences > Keyboard > Shortcuts, as a shortcut with name "System Preferences..." and binding command-shift-,
