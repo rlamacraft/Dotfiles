@@ -34,10 +34,7 @@ defaults write com.apple.PowerChime ChimeOnAllHardware -bool true; open /System/
   - In System Preferences > Keyboard > Shortcuts, as a shortcut with name "System Preferences..." and binding command-shift-,
 
 * DefaultKeyBinding.dict
-Copy this to the following directory on Mac OS - symlink wont work.
-```
-~/Library/KeyBindings/DefaultKeyBinding.dict
-```
+Copy "DefaultKeyBinding.dict" to "~/Library/KeyBindings/DefaultKeyBinding.dict" -- symlink wont work. 
 
-It remaps the following
-`§` to `#`, so that M-3 may be used in the terminal.
+It remaps the following:
+- `§` to `#`, so that M-3 may be used in the terminal.

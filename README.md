@@ -10,6 +10,7 @@ My personal config files for a variety of programs that make up my development e
 2. Emacs, if not installed
 3. Spacemacs
 4. Tmux
+5. [Space Mono Typeface](https://fonts.google.com/specimen/Space+Mono), changing the terminal when you do
 
 
 ## Step 3: Symlinking
