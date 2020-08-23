@@ -27,6 +27,17 @@ defaults write com.apple.PowerChime ChimeOnAllHardware -bool true; open /System/
     - Save is as "Emacsclient", perhaps in this cloned repo in a 'bin' directory
     - Add it to the Dock, perhaps with a pretty icon
 
-* Shortcuts
+* Keybindings
+** Caps Lock as Escape
+   - In System Preferences > Keyboard > Keyboard > Modifier Keys..., change Caps Lock to Escape
 ** System Preferences
   - In System Preferences > Keyboard > Shortcuts, as a shortcut with name "System Preferences..." and binding command-shift-,
+
+* DefaultKeyBinding.dict
+Copy this to the following directory on Mac OS - symlink wont work.
+```
+~/Library/KeyBindings/DefaultKeyBinding.dict
+```
+
+It remaps the following
+`§` to `#`, so that M-3 may be used in the terminal.

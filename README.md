@@ -1,17 +1,38 @@
 # Dotfiles
 My personal config files for a variety of programs that make up my development environment
 
-## DefaultKeyBinding.dict
-Copy this to the following directory on Mac OS - symlink wont work.
+## Step 1: Clone this repo 
+- Must be to $HOME/Documents/GitHub/
+
+
+## Step 2: Tools to install
+1. Zsh
+2. Emacs, if not installed
+3. Spacemacs
+4. Tmux
+
+
+## Step 3: Symlinking
+
+**.zshrc**
+Zsh configuration file, simply symlink as follows
 ```
-~/Library/KeyBindings/DefaultKeyBinding.dict
+ln -s $HOME/Documents/GitHub/Dotfiles/.zshrc $HOME/.zshrc
 ```
 
-It remaps the following
-`§` to `#`, so that M-3 may be used in the terminal.
+**.spacemacs**
+Spacemacs configuration file, simply symlink as follows
+```
+ln -s $HOME/Documents/GitHub/Dotfiles/.spacemacs $HOME/.spacemacs
+```
 
-## .tmux.conf
+**.tmux.conf**
 Tmux configure file, simply symlink as follows
 ```
-ln -s <cloned_repo_location>/.tmux.conf ~/.tmux.conf
+ln -s $HOME/Documents/GitHub/Dotfiles/.tmux.conf $HOME/.tmux.conf
 ```
+
+
+## Sept 4: Mac specific stuff
+- Follow the instructions in the "macSetup.org" file
+
