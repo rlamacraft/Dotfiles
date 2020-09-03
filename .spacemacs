@@ -31,6 +31,7 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     javascript
      markdown
      python
      elixir
@@ -42,7 +43,9 @@ values."
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      helm
-     ;; auto-completion
+     (auto-completion :variables
+                      auto-completion-enable-snippets-in-popup t
+                      auto-completion-tab-key-behavior nil)
      ;; better-defaults
      emacs-lisp
      git
@@ -315,17 +318,13 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
-  ;;; Org-mode
-  (add-hook 'org-mode-hook '(lambda ()
-			    ;;; line wrap
-          (visual-line-mode)
-          ;;; word wrap
-          (toggle-word-wrap)
-          ))
-  (setq org-todo-keywords
-        '((sequence "TODO" "WAIT" "|" "DONE")))
+  ;;; macOS styling
+  (add-to-list
+   'default-frame-alist'(ns-transparent-titlebar . t))
+  (add-to-list
+   'default-frame-alist'(ns-appearance . light))
 
-  ;; Font and frame size
+  ;;; Font and frame size
   (set-face-font 'default "Space Mono 12")
   (setq default-frame-alist
         (append (list '(width  . 100) '(height . 55)
@@ -335,57 +334,75 @@ you should place your code here."
   (set-frame-parameter (selected-frame)
                        'internal-border-width 0)
 
-  (setq org-ellipsis "·")
+  ;;; Spaceline
+  (spaceline-compile
+    ; left side
+    '(((persp-name
+        workspace-number
+        window-number)
+      :fallback evil-state
+      :face highlight-face
+      :priority 100)
+      (anzu :priority 95)
+      auto-compile
+      ((buffer-modified buffer-size buffer-id remote-host)
+      :priority 98)
+      (major-mode :priority 79)
+      (process :when active)
+      ((flycheck-error flycheck-warning flycheck-info)
+      :when active
+      :priority 89)
+      (minor-modes :when active
+                  :priority 9)
+      (mu4e-alert-segment :when active)
+      (erc-track :when active)
+      ;; (version-control :when active
+      ;;                  :priority 78)
+      (org-pomodoro :when active)
+      (org-clock :when active)
+      nyan-cat)
+    ; right side
+    '(which-function
+      (python-pyvenv :fallback python-pyenv)
+      (purpose :priority 94)
+      (battery :when active)
+      (selection-info :priority 95)
+      input-method
+      ((buffer-encoding-abbrev
+        point-position
+        line-column)
+      :separator " | "
+      :priority 96)
+      (global :when active)
+      (buffer-position :priority 99)
+      (hud :priority 99 :skip-alternate t)))
 
+  ;;; Spelling
   (setq ispell-program-name "/usr/local/bin/aspell")
 
-(spaceline-compile
-  ; left side
-  '(((persp-name
-      workspace-number
-      window-number)
-     :fallback evil-state
-     :face highlight-face
-     :priority 100)
-    (anzu :priority 95)
-    auto-compile
-    ((buffer-modified buffer-size buffer-id remote-host)
-     :priority 98)
-    (major-mode :priority 79)
-    (process :when active)
-    ((flycheck-error flycheck-warning flycheck-info)
-     :when active
-     :priority 89)
-    (minor-modes :when active
-                 :priority 9)
-    (mu4e-alert-segment :when active)
-    (erc-track :when active)
-    ;; (version-control :when active
-    ;;                  :priority 78)
-    (org-pomodoro :when active)
-    (org-clock :when active)
-    nyan-cat)
-  ; right side
-  '(which-function
-    (python-pyvenv :fallback python-pyenv)
-    (purpose :priority 94)
-    (battery :when active)
-    (selection-info :priority 95)
-    input-method
-    ((buffer-encoding-abbrev
-      point-position
-      line-column)
-     :separator " | "
-     :priority 96)
-    (global :when active)
-    (buffer-position :priority 99)
-    (hud :priority 99 :skip-alternate t)))
+  ;;; Yasnippet in autocomplete
+  ;; (setq-default dotspacemacs-configuration-layers
+  ;;               '((auto-completion :variables
+  ;;                                  auto-completion-enable-snippets-in-popup t)))
 
+  ;;; Org-mode
+  (add-hook 'org-mode-hook '(lambda ()
+			    ;;; line wrap
+          (visual-line-mode)
+          ;;; word wrap
+          (toggle-word-wrap)
+          ))
+  (setq org-todo-keywords
+        '((sequence "TODO" "WAIT" "|" "DONE")))
+  (setq org-ellipsis "·")
 
-(add-to-list
- 'default-frame-alist'(ns-transparent-titlebar . t))
-(add-to-list
- 'default-frame-alist'(ns-appearance . light))
+  ;;; JS-mode
+  (add-hook 'js-mode-hook '(lambda ()
+                             (message "test")
+                             ;;; indentation level
+                             (setq tab-width 2)
+                             ))
+
 
 )
 
@@ -396,15 +413,14 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(org-agenda-files
-   (quote
-    ("")))
+ '(evil-want-Y-yank-to-eol nil)
+ '(org-agenda-files (quote ("")))
  '(package-selected-packages
    (quote
-    (olivetti smeargle orgit magit-gitflow magit-popup helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link evil-magit magit git-commit with-editor transient vterm zenburn-theme zen-and-art-theme white-sand-theme underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme toxi-theme tao-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme seti-theme reverse-theme rebecca-theme railscasts-theme purple-haze-theme professional-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme organic-green-theme omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme naquadah-theme mustang-theme monokai-theme monochrome-theme molokai-theme moe-theme minimal-theme material-theme majapahit-theme madhat2r-theme lush-theme light-soap-theme jbeans-theme jazz-theme ir-black-theme inkpot-theme heroku-theme hemisu-theme hc-zenburn-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme gandalf-theme flatui-theme flatland-theme farmhouse-theme exotica-theme espresso-theme dracula-theme django-theme darktooth-theme autothemer darkokai-theme darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized clues-theme cherry-blossom-theme busybee-theme bubbleberry-theme birds-of-paradise-plus-theme badwolf-theme apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes afternoon-theme flyspell-correct-helm flyspell-correct auto-dictionary org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download htmlize gnuplot mmm-mode markdown-toc markdown-mode gh-md yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional helm-pydoc cython-mode anaconda-mode pythonic ob-elixir flycheck-credo flycheck alchemist company elixir-mode web-mode tagedit slim-mode scss-mode sass-mode pug-mode helm-css-scss haml-mode emmet-mode ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra lv hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile projectile pkg-info epl helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
+    (helm-company helm-c-yasnippet fuzzy company-web web-completion-data company-statistics company-anaconda auto-yasnippet ac-ispell auto-complete web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor yasnippet multiple-cursors js2-mode js-doc coffee-mode olivetti smeargle orgit magit-gitflow magit-popup helm-gitignore gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link evil-magit magit git-commit with-editor transient vterm zenburn-theme zen-and-art-theme white-sand-theme underwater-theme ujelly-theme twilight-theme twilight-bright-theme twilight-anti-bright-theme toxi-theme tao-theme tangotango-theme tango-plus-theme tango-2-theme sunny-day-theme sublime-themes subatomic256-theme subatomic-theme spacegray-theme soothe-theme solarized-theme soft-stone-theme soft-morning-theme soft-charcoal-theme smyx-theme seti-theme reverse-theme rebecca-theme railscasts-theme purple-haze-theme professional-theme planet-theme phoenix-dark-pink-theme phoenix-dark-mono-theme organic-green-theme omtose-phellack-theme oldlace-theme occidental-theme obsidian-theme noctilux-theme naquadah-theme mustang-theme monokai-theme monochrome-theme molokai-theme moe-theme minimal-theme material-theme majapahit-theme madhat2r-theme lush-theme light-soap-theme jbeans-theme jazz-theme ir-black-theme inkpot-theme heroku-theme hemisu-theme hc-zenburn-theme gruvbox-theme gruber-darker-theme grandshell-theme gotham-theme gandalf-theme flatui-theme flatland-theme farmhouse-theme exotica-theme espresso-theme dracula-theme django-theme darktooth-theme autothemer darkokai-theme darkmine-theme darkburn-theme dakrone-theme cyberpunk-theme color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized clues-theme cherry-blossom-theme busybee-theme bubbleberry-theme birds-of-paradise-plus-theme badwolf-theme apropospriate-theme anti-zenburn-theme ample-zen-theme ample-theme alect-themes afternoon-theme flyspell-correct-helm flyspell-correct auto-dictionary org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download htmlize gnuplot mmm-mode markdown-toc markdown-mode gh-md yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional helm-pydoc cython-mode anaconda-mode pythonic ob-elixir flycheck-credo flycheck alchemist company elixir-mode web-mode tagedit slim-mode scss-mode sass-mode pug-mode helm-css-scss haml-mode emmet-mode ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint indent-guide hydra lv hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-themes helm-swoop helm-projectile projectile pkg-info epl helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu elisp-slime-nav dumb-jump f dash s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:background nil)))))
