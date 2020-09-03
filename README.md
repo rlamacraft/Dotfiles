@@ -6,11 +6,13 @@ My personal config files for a variety of programs that make up my development e
 
 
 ## Step 2: Tools to install
-1. Zsh
+1. Zsh, if not installed
 2. Emacs, if not installed
-3. Spacemacs
+3. [Spacemacs](https://www.spacemacs.org)
 4. Tmux
-5. [Space Mono Typeface](https://fonts.google.com/specimen/Space+Mono), changing the terminal when you do
+5. Typefaces
+   - [Space Mono Typeface](https://fonts.google.com/specimen/Space+Mono), changing the terminal when you do
+   - [Source Code Pro](https://fonts.google.com/specimen/Source+Code+Pro), for spacemacs defaults
 
 
 ## Step 3: Symlinking
@@ -32,6 +34,7 @@ Tmux configure file, simply symlink as follows
 ```
 ln -s $HOME/Documents/GitHub/Dotfiles/.tmux.conf $HOME/.tmux.conf
 ```
+Then add `tmux` under Terminal > Settings > Profiles > Defaults > Shell > Startup > Run command
 
 
 ## Sept 4: Mac specific stuff
