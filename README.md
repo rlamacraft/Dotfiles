@@ -28,6 +28,11 @@ Spacemacs configuration file, simply symlink as follows
 ```
 ln -s $HOME/Documents/GitHub/Dotfiles/.spacemacs $HOME/.spacemacs
 ```
+Then add the snippets
+```
+rm -r $HOME/.emacs.d/private/snippets
+ln -s $HOME/Documents/Github/Dotfiles/snippets $HOME/.emacs.d/private/snippets
+```
 
 **.tmux.conf**
 Tmux configure file, simply symlink as follows
