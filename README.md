@@ -24,14 +24,20 @@ ln -s $HOME/Documents/GitHub/Dotfiles/.zshrc $HOME/.zshrc
 ```
 
 **.spacemacs**
-Spacemacs configuration file, simply symlink as follows
+
+- Spacemacs configuration file, simply symlink as follows
 ```
 ln -s $HOME/Documents/GitHub/Dotfiles/.spacemacs $HOME/.spacemacs
 ```
-Then add the snippets
+- Then add the snippets
 ```
 rm -r $HOME/.emacs.d/private/snippets
 ln -s $HOME/Documents/Github/Dotfiles/snippets $HOME/.emacs.d/private/snippets
+```
+- Then start emacs so that all of the dependencies can be downloaded and installed.
+  - There might be an error about an 'tern' dependency; this is a JavaScript dev tool and can be install with the following npm command (source)[https://macbookandheels.com/emacs/2019/01/18/tern-binary-not-found/].
+```
+npm install --global tern
 ```
 
 **.tmux.conf**
@@ -39,7 +45,15 @@ Tmux configure file, simply symlink as follows
 ```
 ln -s $HOME/Documents/GitHub/Dotfiles/.tmux.conf $HOME/.tmux.conf
 ```
-Then add `tmux` under Terminal > Settings > Profiles > Defaults > Shell > Startup > Run command
+Then add one of the following depending upon the colour theme under Terminal > Settings > Profiles > Default > Shell > Startup > Run command
+```
+tmux new-session \; setenv dark_mode 0
+```
+or
+```
+tmux new-session \; setenv dark_mode 1
+```
+Then finally go to Terminal > Settings > Profiles > Default > Window and uncheck everything except dimensions in the top section and then unchecking everything but the "Active process name" and "Show activity indidicator" on the Tab tab
 
 
 ## Sept 4: Mac specific stuff
