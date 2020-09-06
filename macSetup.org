@@ -2,6 +2,9 @@
 #+AUTHOR: Robert Lamacraft
 #+EMAIL: hello@rlamacraft.uk
 
+* Peripherals
+** Logitech Mouse
+- Install and setup Logi Options -- unfortunately there's no way to store those settings in this repo
 * Charging sound
 - Play the iOS charging sound when the power cord is connected
 #+BEGIN_SRC sh
