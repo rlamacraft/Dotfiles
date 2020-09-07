@@ -16,6 +16,7 @@ path+=('/usr/local/bin')
 path+=("$HOME/.local/bin/")
 path+=("$HOME/bin")
 path+=("$HOME/ShellScripts")
+path+=("$HOME/bin/apache-maven-3.6.3/bin")
 export PATH
 
 ## iCloud
