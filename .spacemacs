@@ -400,7 +400,7 @@ you should place your code here."
   (add-hook 'js-mode-hook '(lambda ()
                              (message "test")
                              ;;; indentation level
-                             (setq tab-width 2)
+                             (setq js-indent-level 2)
                              ))
 
 
