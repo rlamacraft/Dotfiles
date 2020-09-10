@@ -325,12 +325,12 @@ you should place your code here."
    'default-frame-alist'(ns-appearance . light))
 
   ;;; Font and frame size
-  (set-face-font 'default "Space Mono 12")
+  (set-face-font 'default "Space Mono 13")
   (setq default-frame-alist
         (append (list '(width  . 100) '(height . 55)
                       '(vertical-scroll-bars . nil)
                       '(internal-border-width . 0)
-                      '(font . "Space Mono 12"))))
+                      '(font . "Space Mono 13"))))
   (set-frame-parameter (selected-frame)
                        'internal-border-width 0)
 
