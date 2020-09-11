@@ -16,6 +16,7 @@ path+=('/usr/local/bin')
 path+=("$HOME/.local/bin/")
 path+=("$HOME/bin")
 path+=("$HOME/ShellScripts")
+path+=("$HOME/bin/apache-maven-3.6.3/bin")
 export PATH
 
 ## iCloud
@@ -55,3 +56,6 @@ ev() {
 
 ## Play a done sound
 alias done="afplay $HOME/Documents/GitHub/Dotfiles/sounds/done.mp3"
+
+# Ensure terminal allows for emacs keybindings: ctrl-e, ctrl-a, etc
+bindkey -e
