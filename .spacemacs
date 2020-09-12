@@ -175,7 +175,7 @@ values."
    dotspacemacs-retain-visual-state-on-shift t
    ;; If non-nil, J and K move lines up and down when in visual mode.
    ;; (default nil)
-   dotspacemacs-visual-line-move-text nil
+   dotspacemacs-visual-line-move-text t
    ;; If non nil, inverse the meaning of `g' in `:substitute' Evil ex-command.
    ;; (default nil)
    dotspacemacs-ex-substitute-global nil
@@ -353,14 +353,7 @@ you should place your code here."
       :when active
       :priority 89)
       (minor-modes :when active
-                  :priority 9)
-      (mu4e-alert-segment :when active)
-      (erc-track :when active)
-      ;; (version-control :when active
-      ;;                  :priority 78)
-      (org-pomodoro :when active)
-      (org-clock :when active)
-      nyan-cat)
+                  :priority 9))
     ; right side
     '(which-function
       (python-pyvenv :fallback python-pyenv)
@@ -398,12 +391,9 @@ you should place your code here."
 
   ;;; JS-mode
   (add-hook 'js-mode-hook '(lambda ()
-                             (message "test")
                              ;;; indentation level
                              (setq js-indent-level 2)
                              ))
-
-
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
