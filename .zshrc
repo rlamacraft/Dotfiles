@@ -27,6 +27,9 @@ PROMPT="> "
 export PROMPT
 unsetopt PROMPT_SP
 
+## Sounds
+export SOUNDS=~/Documents/Github/Dotfiles/sounds
+
 # Command aliases and similar
 
 ## Useful static local Web server on passed port number
@@ -53,9 +56,6 @@ bandit() {
 ev() {
     emacs "$1" --eval '(setq buffer-read-only t)'
 }
-
-## Play a done sound
-alias done="afplay $HOME/Documents/GitHub/Dotfiles/sounds/done.mp3"
 
 # Ensure terminal allows for emacs keybindings: ctrl-e, ctrl-a, etc
 bindkey -e

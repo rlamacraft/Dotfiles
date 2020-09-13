@@ -56,6 +56,14 @@ tmux new-session \; setenv dark_mode 1
 Then finally go to Terminal > Settings > Profiles > Default > Window and uncheck everything except dimensions in the top section and then unchecking everything but the "Active process name" and "Show activity indidicator" on the Tab tab
 
 
-## Sept 4: Mac specific stuff
+## Step 4: Mac specific stuff
 - Follow the instructions in the "macSetup.org" file
 
+## Step 5: Using the sounds files
+Here is an example
+``` sh
+echo 'done
+[ERROR]' | awk '{print $0}; $0 ~ "done" {system("afplay $SOUNDS/done/1.mp3 &")}; $0 ~ "ERROR" {system("afplay $SOUNDS/error/1.mp3 &")}'
+```
+Sources of audio files
+- [Zapsplat](zapsplat.com)
