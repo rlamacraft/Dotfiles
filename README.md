@@ -13,7 +13,10 @@ My personal config files for a variety of programs that make up my development e
 5. Typefaces
    - [Space Mono Typeface](https://fonts.google.com/specimen/Space+Mono), changing the terminal when you do
    - [Source Code Pro](https://fonts.google.com/specimen/Source+Code+Pro), for spacemacs defaults
-
+6. [tldr](https://github.com/tldr-pages/tldr)
+```
+brew install tldr
+```
 
 ## Step 3: Symlinking
 
