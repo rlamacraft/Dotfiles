@@ -30,6 +30,11 @@ unsetopt PROMPT_SP
 ## Sounds
 export SOUNDS=~/Documents/Github/Dotfiles/sounds
 
+## Research Space
+
+### File Store
+export RS_FILE_BASE="$HOME/Documents/researchspaceFStore"
+
 # Command aliases and similar
 
 ## Useful static local Web server on passed port number
