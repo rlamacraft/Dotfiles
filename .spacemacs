@@ -375,9 +375,9 @@ you should place your code here."
   (setq ispell-program-name "/usr/local/bin/aspell")
 
   ;;; Yasnippet in autocomplete
-  ;; (setq-default dotspacemacs-configuration-layers
-  ;;               '((auto-completion :variables
-  ;;                                  auto-completion-enable-snippets-in-popup t)))
+  (setq-default dotspacemacs-configuration-layers
+                '((auto-completion :variables
+                                   auto-completion-enable-snippets-in-popup t)))
 
   ;;; Org-mode
   (add-hook 'org-mode-hook '(lambda ()
