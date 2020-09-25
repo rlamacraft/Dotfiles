@@ -1,0 +1,17 @@
+# -*- mode: snippet -*-
+# name: react-template
+# key: react-template
+# --
+// @flow
+
+import React from "react";
+import { useObserver } from "mobx-react-lite";
+
+export default function $1() {
+
+  return useObserver(() => {
+    return(
+      $0
+    );
+  });
+}
