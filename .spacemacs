@@ -137,18 +137,19 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(apropospriate-light
-                         ;; spacemacs-dark
-                         spacemacs-light)
+   dotspacemacs-themes '(darktooth
+                         smyx
+                         apropospriate-dark
+                         spacemacs-dark)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
+   dotspacemacs-default-font '("Space Mono 13"
+                               :size 15
                                :weight normal
                                :width normal
-                               :powerline-scale 1.1)
+                               :powerline-scale 1.7)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The key used for Emacs commands (M-x) (after pressing on the leader key).
@@ -232,7 +233,7 @@ values."
    dotspacemacs-loading-progress-bar t
    ;; If non nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
-   dotspacemacs-fullscreen-at-startup nil
+   dotspacemacs-fullscreen-at-startup t
    ;; If non nil `spacemacs/toggle-fullscreen' will not use native fullscreen.
    ;; Use to disable fullscreen animations in OSX. (default nil)
    dotspacemacs-fullscreen-use-non-native nil
@@ -312,6 +313,11 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+
+  ;; fix theme loading, see GitHub issue:
+  ;;   https://github.com/syl20bnr/spacemacs/issues/8871#issuecomment-308822752
+  (load-file "~/.emacs.d/elpa/dash-20200524.1947/dash.el")
+  (load-file "~/.emacs.d/elpa/autothemer-20180920.923/autothemer.el")
   )
 
 (defun dotspacemacs/user-config ()
@@ -324,19 +330,16 @@ you should place your code here."
 
   ;;; macOS styling
   (add-to-list
-   'default-frame-alist'(ns-transparent-titlebar . t))
+   'default-frame-alist '(ns-transparent-titlebar . t))
   (add-to-list
-   'default-frame-alist'(ns-appearance . light))
+   'default-frame-alist '(ns-appearance . dark))
 
   ;;; Font and frame size
   (set-face-font 'default "Space Mono 13")
   (setq default-frame-alist
-        (append (list '(width  . 100) '(height . 55)
+        (append (list
                       '(vertical-scroll-bars . nil)
-                      '(internal-border-width . 0)
-                      '(font . "Space Mono 13"))))
-  (set-frame-parameter (selected-frame)
-                       'internal-border-width 0)
+                      )))
 
   ;;; Spaceline
   (spaceline-compile
@@ -345,9 +348,7 @@ you should place your code here."
         workspace-number
         window-number)
       :fallback evil-state
-      :face highlight-face
       :priority 100)
-      (anzu :priority 95)
       auto-compile
       ((buffer-modified buffer-size buffer-id remote-host)
       :priority 98)
@@ -356,13 +357,11 @@ you should place your code here."
       ((flycheck-error flycheck-warning flycheck-info)
       :when active
       :priority 89)
-      (minor-modes :when active
-                  :priority 9))
+      ;; (minor-modes :when active
+                   ;; :priority 9)
+      )
     ; right side
     '(which-function
-      (python-pyvenv :fallback python-pyenv)
-      (purpose :priority 94)
-      (battery :when active)
       (selection-info :priority 95)
       input-method
       ((buffer-encoding-abbrev
@@ -371,16 +370,12 @@ you should place your code here."
       :separator " | "
       :priority 96)
       (global :when active)
-      (buffer-position :priority 99)
-      (hud :priority 99 :skip-alternate t)))
+      ;; (buffer-position :priority 99)
+      (hud :priority 99 :skip-alternate t)
+      ))
 
   ;;; Spelling
   (setq ispell-program-name "/usr/local/bin/aspell")
-
-  ;;; Yasnippet in autocomplete
-  (setq-default dotspacemacs-configuration-layers
-                '((auto-completion :variables
-                                   auto-completion-enable-snippets-in-popup t)))
 
   ;;; Org-mode
   (add-hook 'org-mode-hook '(lambda ()
