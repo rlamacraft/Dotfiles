@@ -316,8 +316,8 @@ before packages are loaded. If you are unsure, you should try in setting them in
 
   ;; fix theme loading, see GitHub issue:
   ;;   https://github.com/syl20bnr/spacemacs/issues/8871#issuecomment-308822752
-  (load-file "~/.emacs.d/elpa/dash-20200524.1947/dash.el")
-  (load-file "~/.emacs.d/elpa/autothemer-20180920.923/autothemer.el")
+  (load-file (car (file-expand-wildcards "~/.emacs.d/elpa/dash-*/dash.el")))
+  (load-file (car (file-expand-wildcards "~/.emacs.d/elpa/autothemer-*/autothemer.el")))
   )
 
 (defun dotspacemacs/user-config ()
