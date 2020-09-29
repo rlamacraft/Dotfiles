@@ -71,5 +71,9 @@ alias mvn-keep='mvn clean jetty:run -Denvironment=keepdbintact -DRS.devlogLevel=
     -Dspring.profiles.active=run -Dliquibase.context=dev-test \
     -DgenerateReactDist -Dlog4j.configuration=log4j-dev.xml'
 
+function npm-ding() {
+    npm run serve | awk '$0 ~ "ERROR" {system("afplay $SOUNDS/error/1.mp3 &")} {print $0}'
+}
+
 # Ensure terminal allows for emacs keybindings: ctrl-e, ctrl-a, etc
 bindkey -e
