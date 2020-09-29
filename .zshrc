@@ -62,5 +62,14 @@ ev() {
     emacs "$1" --eval '(setq buffer-read-only t)'
 }
 
+## ResearchSpace
+alias mvn-drop='mvn clean jetty:run -Denvironment=drop-recreate-db -DRS.devlogLevel=INFO \
+    -Dspring.profiles.active=run -Dliquibase.context=dev-test \
+    -DgenerateReactDist -Dlog4j.configuration=log4j-dev.xml'
+
+alias mvn-keep='mvn clean jetty:run -Denvironment=keepdbintact -DRS.devlogLevel=INFO \
+    -Dspring.profiles.active=run -Dliquibase.context=dev-test \
+    -DgenerateReactDist -Dlog4j.configuration=log4j-dev.xml'
+
 # Ensure terminal allows for emacs keybindings: ctrl-e, ctrl-a, etc
 bindkey -e
