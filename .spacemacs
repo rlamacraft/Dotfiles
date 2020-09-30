@@ -393,6 +393,12 @@ you should place your code here."
                              ;;; indentation level
                              (setq js-indent-level 2)
                              ))
+
+  ;;; eshell
+  (setq eshell-prompt-function
+        (lambda nil "> "))
+  (setq eshell-prompt-function
+        (lambda nil "> "))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
