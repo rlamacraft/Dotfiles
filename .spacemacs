@@ -386,7 +386,8 @@ you should place your code here."
           (toggle-word-wrap)
           ))
   (setq org-todo-keywords
-        '((sequence "TODO" "WAIT" "|" "DONE")))
+        '((sequence "TODO(t!)" "WAIT(w!)" "IDEA(i!)""|" "DONE(d!)" "NOPE(n!)")))
+  (setq org-bullets-bullet-list '(">" "≫" "⋙" "⪖" "⪜" "⩾"))
   (setq org-ellipsis "·")
 
   ;;; JS-mode
