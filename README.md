@@ -39,7 +39,7 @@ rm -r $HOME/.emacs.d/private/snippets
 ln -s $HOME/Documents/Github/Dotfiles/snippets $HOME/.emacs.d/private/snippets
 ```
 - Then start emacs so that all of the dependencies can be downloaded and installed.
-  - There might be an error about an 'tern' dependency; this is a JavaScript dev tool and can be install with the following npm command (source)[https://macbookandheels.com/emacs/2019/01/18/tern-binary-not-found/].
+  - There might be an error about an 'tern' dependency; this is a JavaScript dev tool and can be install with the following npm command [source](https://macbookandheels.com/emacs/2019/01/18/tern-binary-not-found/).
 ```
 npm install --global tern
 ```
