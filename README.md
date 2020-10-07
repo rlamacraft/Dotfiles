@@ -20,10 +20,11 @@ brew install tldr
 
 ## Step 3: Symlinking
 
-**.zshrc**
-Zsh configuration file, simply symlink as follows
+**zsh**
+Zsh configuration files, simply symlink as follows
 ```
 ln -s $HOME/Documents/GitHub/Dotfiles/.zshrc $HOME/.zshrc
+ln -s $HOME/Documents/GitHub/Dotfiles/.zshenv $HOME/.zshenv
 ```
 
 **.spacemacs**
