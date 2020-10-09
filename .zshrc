@@ -50,5 +50,16 @@ function npm-ding() {
     npm run serve | awk '$0 ~ "ERROR" {system("afplay $SOUNDS/error/1.mp3 &")} {print $0}'
 }
 
+function changed-or-modified() {
+    git status --porcelain | awk '$1 == "M" || $1 == "A" {print $2}'
+}
+
+function commit-prettier() {
+    changed-or-modified | xargs npx prettier --write
+}
+function commit-eslint() {
+    changed-or-modified | xargs npx eslint --fix
+}
+
 # Ensure terminal allows for emacs keybindings: ctrl-e, ctrl-a, etc
 bindkey -e
