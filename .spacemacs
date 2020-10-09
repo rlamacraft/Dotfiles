@@ -397,6 +397,10 @@ you should place your code here."
                              (setq js-indent-level 2)
                              ))
 
+  ;;; <object-var> => {...<object-var>}
+  (fset 'js-obj-clone
+    (lambda (&optional arg) "Keyboard macro." (interactive "p") (kmacro-exec-ring-item (quote ([121 115 105 119 125 97 46 46 46 escape] 0 "%d")) arg)))
+
   ;;; eshell
   (setq eshell-prompt-function
         (lambda nil "> "))
