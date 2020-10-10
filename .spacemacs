@@ -380,11 +380,7 @@ you should place your code here."
 
   ;;; Org-mode
   (add-hook 'org-mode-hook '(lambda ()
-			    ;;; line wrap
-          (visual-line-mode)
-          ;;; word wrap
-          (toggle-word-wrap)
-          ))
+                              (visual-line-mode)))
   (setq org-todo-keywords
         '((sequence "TODO(t!)" "WAIT(w!)" "|" "IDEA(i!)" "DONE(d!)" "NOPE(n!)")))
   ;; (setq org-bullets-bullet-list '(">" "≫" "⋙" "⪖" "⪜" "⩾"))
