@@ -51,7 +51,7 @@ function npm-ding() {
 }
 
 function changed-or-modified() {
-    git status --porcelain | awk '$1 == "M" || $1 == "A" {print $2}'
+    git diff --cached --name-only --diff-filter=M --diff-filter=A
 }
 
 function commit-prettier() {
