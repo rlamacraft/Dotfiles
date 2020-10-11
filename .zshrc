@@ -50,20 +50,20 @@ function npm-ding() {
     npm run serve | awk '$0 ~ "ERROR" {system("afplay $SOUNDS/error/1.mp3 &")} {print $0}'
 }
 
-function changed-or-modified() {
+function modified-or-added() {
     git diff --cached --name-only --diff-filter=M --diff-filter=A
 }
 
 function commit-prettier() {
-    changed-or-modified | xargs npx prettier --write
+    modified-or-added | xargs npx prettier --write
 }
 
 function commit-eslint() {
-    changed-or-modified | xargs npx eslint --fix
+    modified-or-added | xargs npx eslint --fix
 }
 
 function commit-console-debug() {
-    changed-or-modified | xargs sed -i '' "/console.debug/d"
+    modified-or-added | xargs sed -i '' "/console.debug/d"
 }
 
 # Ensure terminal allows for emacs keybindings: ctrl-e, ctrl-a, etc
