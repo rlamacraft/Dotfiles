@@ -57,8 +57,13 @@ function changed-or-modified() {
 function commit-prettier() {
     changed-or-modified | xargs npx prettier --write
 }
+
 function commit-eslint() {
     changed-or-modified | xargs npx eslint --fix
+}
+
+function commit-console-debug() {
+    changed-or-modified | xargs sed -i '' "/console.debug/d"
 }
 
 # Ensure terminal allows for emacs keybindings: ctrl-e, ctrl-a, etc
