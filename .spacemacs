@@ -402,6 +402,12 @@ you should place your code here."
         (lambda nil "> "))
   (setq eshell-prompt-function
         (lambda nil "> "))
+
+  ;; yasnippet helpers
+  (defun capitalizeFirst (s)
+    (if (> (length s) 0)
+        (concat (upcase (substring s 0 1)) (substring s 1))
+      nil))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
