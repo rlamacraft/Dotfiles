@@ -64,7 +64,7 @@ function commit-eslint() {
 
 # note: os x only
 function commit-strip-console() {
-    modified-or-added | xargs sed -i '' -E "/console.(debug|trace)/d" sedTest
+    modified-or-added | xargs sed -i '' -E "/console.(debug|trace)/d"
 }
 
 # Ensure terminal allows for emacs keybindings: ctrl-e, ctrl-a, etc
