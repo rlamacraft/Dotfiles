@@ -380,10 +380,11 @@ you should place your code here."
 
   ;;; Org-mode
   (add-hook 'org-mode-hook '(lambda ()
-                              (visual-line-mode)))
+                              (visual-line-mode)
+                              (face-remap-add-relative 'default :slant 'italic)
+                              (buffer-face-mode)))
   (setq org-todo-keywords
         '((sequence "TODO(t!)" "WAIT(w!)" "|" "IDEA(i!)" "DONE(d!)" "NOPE(n!)")))
-  ;; (setq org-bullets-bullet-list '(">" "≫" "⋙" "⪖" "⪜" "⩾"))
   (setq org-bullets-bullet-list '("−" "=" "≡" "⋜" "<" "≤" "≦")) ;; Roman numerals!
   (setq org-ellipsis "·")
 
