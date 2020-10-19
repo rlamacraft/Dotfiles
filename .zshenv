@@ -24,3 +24,7 @@ export SOUNDS=~/Documents/Github/Dotfiles/sounds
 
 ### File Store
 export RS_FILE_BASE="$HOME/Documents/researchspaceFStore"
+
+### Useful directories
+export RS_ROOT="$HOME/Documents/GitHub/rspace-web"
+export RS_UI="$RS_ROOT/src/main/webapp/ui"
