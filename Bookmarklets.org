@@ -18,17 +18,32 @@ speed = prompt("speed");
 [...document.getElementsByTagName('video')].forEach(v => v.playbackRate = speed);
 #+END_SRC
 *** Description
-- Asks the user for the desired speed
-- Expects a number from 0.0 to 1.0 for slower speed
-- Greater than 1.0 for faster speed
+    - Asks the user for the desired speed
+    - Expects a number from 0.0 to 1.0 for slower speed
+    - Greater than 1.0 for faster speed
 *** Assumptions
-- If there are multiple video players on the page, then they should run at the same speed
+    - If there are multiple video players on the page, then they should run at the same speed
+
 
 ** Picture-in-picture
 #+BEGIN_SRC javascript
 document.getElementsByTagName('video')[0].webkitSetPresentationMode("picture-in-picture")
 #+END_SRC
 *** Description
-- Inside of Safari, takes the video player and puts it into picture-in-picture mode
+    - Inside of Safari, takes the video player and puts it into picture-in-picture mode
 *** Assumptions
-- There is only one video player on the page
+    - There is only one video player on the page
+
+* Keyboard pracice
+** 10fastfingers
+#+begin_src javascript
+document.getElementById('primisPlayerContainerDiv') ? (document.getElementById('primisPlayerContainerDiv').style.display = "none") : null;
+document.getElementById('slot-footer-wrapper') ? (document.getElementById('slot-footer-wrapper').style.display = 'none') : null;
+document.getElementById('ads') ? (document.getElementById('ads').style.display = 'none') : null;
+document.getElementById('auswertung-box') ? (document.getElementById('auswertung-box').style.display = 'none') : null;
+#+end_src
+*** Description
+    - Removes all of the ads
+*** Assumptions
+    - None
+
