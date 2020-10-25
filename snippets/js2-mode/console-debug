@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: console-debug
+# key: cdb
+# --
+console.debug("`(current-buffer)` $1", $1);$0
