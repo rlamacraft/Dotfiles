@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: mobx
+# key: mobx
+# --
+import mobx from "mobx";
