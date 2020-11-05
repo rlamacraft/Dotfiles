@@ -409,6 +409,9 @@ you should place your code here."
     (if (> (length s) 0)
         (concat (upcase (substring s 0 1)) (substring s 1))
       nil))
+
+  ;; avy keys for Colemak DHm
+  (setq avy-keys '(?a ?r ?s ?t ?n ?e ?i ?o))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
