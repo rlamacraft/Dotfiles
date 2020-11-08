@@ -412,6 +412,10 @@ you should place your code here."
 
   ;; avy keys for Colemak DHm
   (setq avy-keys '(?a ?r ?s ?t ?n ?e ?i ?o))
+
+  ;; double-space sentences
+  ;; [[https://stevelosh.com/blog/2012/10/why-i-two-space/][this is why]]
+  (setq sentence-end "[\\.\\?\\!]  +")
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
