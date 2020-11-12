@@ -385,6 +385,7 @@ you should place your code here."
                               (buffer-face-mode)))
   (setq org-todo-keywords
         '((sequence "TODO(t!)" "WAIT(w!)" "|" "IDEA(i!)" "DONE(d!)" "NOPE(n!)")))
+  (setq org-log-into-drawer t)
   (setq org-bullets-bullet-list '("−" "=" "≡" "⋜" "<" "≤" "≦")) ;; Roman numerals!
   (setq org-ellipsis "·")
 
