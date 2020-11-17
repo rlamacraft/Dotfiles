@@ -382,7 +382,9 @@ you should place your code here."
   (add-hook 'org-mode-hook '(lambda ()
                               (visual-line-mode)
                               (face-remap-add-relative 'default :slant 'italic)
-                              (buffer-face-mode)))
+                              (buffer-face-mode)
+                              (spacemacs/toggle-line-numbers-off)
+                              ))
   (setq org-todo-keywords
         '((sequence "TODO(t!)" "WAIT(w!)" "|" "IDEA(i!)" "DONE(d!)" "NOPE(n!)")))
   (setq org-log-into-drawer t)
