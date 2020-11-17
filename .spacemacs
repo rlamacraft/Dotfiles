@@ -390,6 +390,9 @@ you should place your code here."
   (setq org-log-into-drawer t)
   (setq org-bullets-bullet-list '("−" "=" "≡" "⋜" "<" "≤" "≦")) ;; Roman numerals!
   (setq org-ellipsis "·")
+  (custom-theme-set-faces
+   'user
+   '(org-tag ((t (:inherit (shadow fixed-pitch) :weight bold :background "#bb4a58")))))
 
   ;;; JS-mode
   (add-hook 'js-mode-hook '(lambda ()
