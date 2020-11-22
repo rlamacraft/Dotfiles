@@ -1,0 +1,16 @@
+; Elpher bookmarks file
+
+; Bookmarks are stored as a list of (label URL) items.
+; Feel free to edit by hand, but take care to ensure
+; the list structure remains intact.
+
+(("flounder.online" "gemini://flounder.online/")
+ ("republic.circumlunar.space" "gemini://republic.circumlunar.space/")
+ ("xkp (dorkweb)" "gemini://republic.circumlunar.space/users/xkp/")
+ ("drewdevault.com" "gemini://drewdevault.com/")
+ ("seirdy.one" "gemini://seirdy.one/")
+ ("~solderpunk" "gemini://gemini.circumlunar.space/~solderpunk/")
+ ("Spacewalk" "gemini://rawtext.club/~sloum/spacewalk.gmi")
+ ("~mieum" "gemini://rawtext.club/~mieum/")
+ ("TODO -- Some bookmarks" "gemini://breadpunk.club/~bakersdozen/bookmarks.gmi")
+ ("bakersdozen" "gemini://breadpunk.club/~bakersdozen/"))
