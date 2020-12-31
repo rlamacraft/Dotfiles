@@ -41,6 +41,7 @@ Copy "DefaultKeyBinding.dict" to "~/Library/KeyBindings/DefaultKeyBinding.dict" 
 
 It remaps the following:
 - `§` to `#`, so that M-3 may be used in the terminal.
+- In Oryx, Moonlander's configure tool, select the "Non-US \" key.
 
 * Mac OS Core Settings
 ** Rearranging Spaces
