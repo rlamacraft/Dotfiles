@@ -69,3 +69,7 @@ function commit-strip-console() {
 
 # Ensure terminal allows for emacs keybindings: ctrl-e, ctrl-a, etc
 bindkey -e
+
+function gl() {
+  git log --pretty="format:  %as %s" -n 20 --graph
+}
