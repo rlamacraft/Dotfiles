@@ -33,4 +33,5 @@ set statusline+=%f
 set statusline+=%=
 set statusline+=%m
 
-
+" === PLUGINS ===
+source $HOME/Documents/Github/Dotfiles/Vim/watchForChanges
