@@ -4,7 +4,14 @@
 set relativenumber
 
 " change directory with change of buffer
-set autochdir
+" don't enable this as it'll break fuzzy finding
+" set autochdir
+
+" enable fuzzy finding
+set path+=**
+
+" display all matching files when we tab complete
+set wildmenu
 
 " enable syntax highlighting
 syntax enable
