@@ -1,9 +1,10 @@
-##################################################
-# If applied, this commit will...
+#################################################|
+# If applied, this commit will...                |
 
-################################################################################
-# Why is this change necessary?
 
-# How does this change address the issue?
+###############################################################################|
+# Why is this change necessary?                                                |
 
-# What, if any, side effects does this change have?
+# How does this change address the issue?                                      |
+
+# What, if any, side effects does this change have?                            |
