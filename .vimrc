@@ -36,4 +36,6 @@ set statusline+=%=
 set statusline+=%m
 
 " === PLUGINS ===
+
+" watch for changes
 source $HOME/Documents/Github/Dotfiles/Vim/watchForChanges
