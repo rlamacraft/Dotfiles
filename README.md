@@ -71,3 +71,7 @@ echo 'done
 ```
 Sources of audio files
 - [Zapsplat](zapsplat.com)
+
+## Step 6: Vim Setup
+Here's some Vim plugins you may want to install
+- https://github.com/tpope/vim-surround
