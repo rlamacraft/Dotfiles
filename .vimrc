@@ -6,6 +6,8 @@ set relativenumber
 " change directory with change of buffer
 set autochdir
 
+" enable syntax highlighting
+syntax enable
 
 " === INDENTATION ===
 
