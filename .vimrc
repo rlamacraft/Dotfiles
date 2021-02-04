@@ -46,3 +46,7 @@ set statusline+=%m
 
 " watch for changes
 source $HOME/Documents/Github/Dotfiles/Vim/watchForChanges
+
+" === MAKE ===
+" When :make is invoked, run eslint
+setlocal makeprg=.\ $HOME/Documents/GitHub/Dotfiles/eslint
