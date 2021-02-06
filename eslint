@@ -1,1 +1,1 @@
-git diff --cached --name-only --diff-filter=M --diff-filter=A | xargs npx eslint --fix -f unix
+git diff --cached --name-only --diff-filter=M --diff-filter=A | sed -e "s|src/main/webapp/ui/src/\(.*\)$|\1|" | xargs npx eslint --fix -f unix
