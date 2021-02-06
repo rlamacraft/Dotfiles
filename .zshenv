@@ -2,7 +2,7 @@
 # It must be symlinked to $HOME/.zshenv
 
 ## EDITOR
-EDITOR="emacsclient -c --alternate-editor='vim'"
+EDITOR="vim"
 export EDITOR
 
 ## PATH
