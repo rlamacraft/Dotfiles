@@ -51,7 +51,7 @@ function npm-ding() {
 }
 
 function modified-or-added() {
-    git diff --cached --name-only --diff-filter=M --diff-filter=A
+    git diff --cached --name-only --diff-filter=M --diff-filter=A | sed -e "s|src/main/webapp/ui/\(.*\)$|\1|"
 }
 
 function commit-prettier() {
