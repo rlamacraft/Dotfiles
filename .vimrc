@@ -16,6 +16,23 @@ set wildmenu
 " enable syntax highlighting
 syntax enable
 
+" === SEARCH ===
+
+" show search
+set hlsearch
+
+" jump to first result
+set incsearch
+
+" clear with <leader>/
+map <silent> <leader>/ :nohlsearch<CR>
+
+" ignore case
+set ignorecase
+
+" unless includes upper case
+set smartcase
+
 " === INDENTATION ===
 
 set tabstop=2
