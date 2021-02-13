@@ -7,13 +7,14 @@ My personal config files for a variety of programs that make up my development e
 
 ## Step 2: Tools to install
 1. Zsh, if not installed
-2. Emacs, if not installed
-3. [Spacemacs](https://www.spacemacs.org)
-4. Tmux
-5. Typefaces
+2. Tmux
+3. If using Spacemacs do the following, otherwise check if vim is the vi installation
+  1. Emacs, if not installed
+  2. [Spacemacs](https://www.spacemacs.org)
+4. Typefaces
    - [Space Mono Typeface](https://fonts.google.com/specimen/Space+Mono), changing the terminal when you do
    - [Source Code Pro](https://fonts.google.com/specimen/Source+Code+Pro), for spacemacs defaults
-6. [tldr](https://github.com/tldr-pages/tldr)
+5. [tldr](https://github.com/tldr-pages/tldr)
 ```
 brew install tldr
 ```
@@ -27,7 +28,7 @@ ln -s $HOME/Documents/GitHub/Dotfiles/.zshrc $HOME/.zshrc
 ln -s $HOME/Documents/GitHub/Dotfiles/.zshenv $HOME/.zshenv
 ```
 
-**.spacemacs**
+**spacemacs**
 
 - Spacemacs configuration file, simply symlink as follows
 ```
@@ -36,7 +37,7 @@ ln -s $HOME/Documents/GitHub/Dotfiles/.spacemacs $HOME/.spacemacs
 - Then add the snippets
 ```
 rm -r $HOME/.emacs.d/private/snippets
-ln -s $HOME/Documents/Github/Dotfiles/snippets $HOME/.emacs.d/private/snippets
+ln -s $HOME/Documents/Github/Dotfiles/emacs_snippets $HOME/.emacs.d/private/snippets
 ```
 - Then start emacs so that all of the dependencies can be downloaded and installed.
   - There might be an error about an 'tern' dependency; this is a JavaScript dev tool and can be install with the following npm command [source](https://macbookandheels.com/emacs/2019/01/18/tern-binary-not-found/).
@@ -44,7 +45,12 @@ ln -s $HOME/Documents/Github/Dotfiles/snippets $HOME/.emacs.d/private/snippets
 npm install --global tern
 ```
 
-**.tmux.conf**
+**vim**
+```
+ln -s $HOME/Documents/GitHub/Dotfiles/.vimrc $HOME/.vimrc
+```
+
+**tmux**
 Tmux configure file, simply symlink as follows
 ```
 ln -s $HOME/Documents/GitHub/Dotfiles/.tmux.conf $HOME/.tmux.conf
@@ -72,6 +78,6 @@ echo 'done
 Sources of audio files
 - [Zapsplat](zapsplat.com)
 
-## Step 6: Vim Setup
+## Step 6: Additional Vim Setup
 Here's some Vim plugins you may want to install
 - https://github.com/tpope/vim-surround
