@@ -24,15 +24,17 @@ brew install tldr
 **zsh**
 Zsh configuration files, simply symlink as follows
 ```
-ln -s $HOME/Documents/GitHub/Dotfiles/.zshrc $HOME/.zshrc
-ln -s $HOME/Documents/GitHub/Dotfiles/.zshenv $HOME/.zshenv
+export dotfiles=$dotfiles
+ln -s $dotfiles/.zshrc $HOME/.zshrc
+ln -s $dotfiles/.zshenv $HOME/.zshenv
+. ~/.zshrc
 ```
 
 **spacemacs**
 
 - Spacemacs configuration file, simply symlink as follows
 ```
-ln -s $HOME/Documents/GitHub/Dotfiles/.spacemacs $HOME/.spacemacs
+ln -s $dotfiles/.spacemacs $HOME/.spacemacs
 ```
 - Then add the snippets
 ```
@@ -47,13 +49,13 @@ npm install --global tern
 
 **vim**
 ```
-ln -s $HOME/Documents/GitHub/Dotfiles/.vimrc $HOME/.vimrc
+ln -s $dotfiles/.vimrc $HOME/.vimrc
 ```
 
 **tmux**
 Tmux configure file, simply symlink as follows
 ```
-ln -s $HOME/Documents/GitHub/Dotfiles/.tmux.conf $HOME/.tmux.conf
+ln -s $dotfiles/.tmux.conf $HOME/.tmux.conf
 ```
 Then add one of the following depending upon the colour theme under Terminal > Settings > Profiles > Default > Shell > Startup > Run command
 ```

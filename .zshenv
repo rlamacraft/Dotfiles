@@ -1,6 +1,10 @@
 # This file must be placed in $HOME/Documents/GitHub/Dotfiles
 # It must be symlinked to $HOME/.zshenv
 
+## Directories
+export dotfiles=$HOME/Documents/GitHub/Dotfiles
+export snip=$dotfiles/snippets
+
 ## EDITOR
 EDITOR="vim"
 export EDITOR
@@ -18,7 +22,7 @@ export PATH
 export ICLOUD="$HOME/Library/Mobile\ Documents"
 
 ## Sounds
-export SOUNDS=~/Documents/Github/Dotfiles/sounds
+export SOUNDS=$dotfiles/sounds
 
 ## Research Space
 
