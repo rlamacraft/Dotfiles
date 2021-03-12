@@ -1,0 +1,7 @@
+1. Take recording of screen with something like QuickTime, saving as .mov file
+2. Use the following comment to generate a .gif
+```
+ffmpeg -i <input.mov> -pix_fmt rgb8 -vf "scale=640:-1" <output.gif>
+```
+- To adjust resolution, change the 640 figure; -1 says to keep aspect ratio
+- Source: https://superuser.com/questions/556029/how-do-i-convert-a-video-to-gif-using-ffmpeg-with-reasonable-quality/556031#556031
