@@ -54,17 +54,8 @@ function modified-or-added() {
     git diff --cached --name-only --diff-filter=M --diff-filter=A | sed -e "s|src/main/webapp/ui/\(.*\)$|\1|"
 }
 
-function commit-prettier() {
-    modified-or-added | xargs npx prettier --write
-}
-
 function commit-eslint() {
     modified-or-added | xargs npx eslint --fix
-}
-
-# note: os x only
-function commit-strip-console() {
-    modified-or-added | xargs sed -i '' -E "/console.(debug|trace)/d"
 }
 
 # Ensure terminal allows for emacs keybindings: ctrl-e, ctrl-a, etc
