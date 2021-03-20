@@ -3,6 +3,9 @@
 # fail on unset variables
 set -u
 
+# Ensure terminal allows for emacs keybindings: ctrl-e, ctrl-a, etc
+bindkey -e
+
 # Interactive vars
 
 ## Prompt
@@ -11,6 +14,10 @@ export PROMPT
 unsetopt PROMPT_SP
 
 # Command aliases and similar
+
+## ls aliases
+alias ls='ls -G'
+alias ll='ls -lAhG'
 
 ## Useful static local Web server on passed port number
 pythonServer() {
@@ -58,19 +65,19 @@ function commit-eslint() {
     modified-or-added | xargs npx eslint --fix
 }
 
-# Ensure terminal allows for emacs keybindings: ctrl-e, ctrl-a, etc
-bindkey -e
+# git
 
+## last 20 commit messages
 function gl() {
   git log --pretty="format:  %as %s" -n 20 --graph
 }
 
-# print git branch but with numbers
+## print git branch but with numbers
 function gb() {
   git branch | cat -n
 }
 
-# checkout branch with number from gb
+## checkout branch with number from gb
 function gc() {
   git branch | sed "$1q;d" | xargs git checkout
 }
