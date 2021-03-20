@@ -2,6 +2,9 @@
 #+AUTHOR: Robert Lamacraft
 #+EMAIL: hello@rlamacraft.uk
 
+* Terminal
+** Import profile.terminal and set it as default
+
 * Peripherals
 ** Logitech Mouse
 - Install and setup Logi Options -- unfortunately there's no way to store those settings in this repo
