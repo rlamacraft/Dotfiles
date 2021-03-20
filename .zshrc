@@ -73,3 +73,13 @@ bindkey -e
 function gl() {
   git log --pretty="format:  %as %s" -n 20 --graph
 }
+
+# print git branch but with numbers
+function gb() {
+  git branch | cat -n
+}
+
+# checkout branch with number from gb
+function gc() {
+  git branch | sed "$1q;d" | xargs git checkout
+}
