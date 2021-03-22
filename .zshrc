@@ -54,7 +54,7 @@ alias mvn-keep='mvn clean jetty:run -Denvironment=keepdbintact -DRS.devlogLevel=
     -DgenerateReactDist -Dlog4j.configuration=log4j-dev.xml'
 
 function npm-ding() {
-    npm run serve | awk '$0 ~ "ERROR" {system("afplay $SOUNDS/error/1.mp3 &")} {print $0}'
+    npm run serve | awk '$0 ~ "ERROR" {system("afplay $SOUNDS/error/1.mp3 &")} $0 ~ "Hash:" {system("afplay -v 0.5 $SOUNDS/done/1.mp3 &")} {print $0}'
 }
 
 function modified-or-added() {
