@@ -1,11 +1,13 @@
 # Dotfiles
 My personal config files for a variety of programs that make up my development environment
 
-## Step 1: Clone this repo 
+## Setup
+
+### Step 1: Clone this repo 
 - Must be to $HOME/Documents/GitHub/
 
 
-## Step 2: Tools to install
+### Step 2: Tools to install
 1. Zsh, if not installed
 2. Tmux
 3. If using Spacemacs do the following, otherwise check if vim is the vi installation
@@ -19,7 +21,7 @@ My personal config files for a variety of programs that make up my development e
 brew install tldr
 ```
 
-## Step 3: Symlinking
+### Step 3: Symlinking
 
 **zsh**
 Zsh configuration files, simply symlink as follows
@@ -68,10 +70,10 @@ tmux new-session \; setenv dark_mode 1
 Then finally go to Terminal > Settings > Profiles > Default > Window and uncheck everything except dimensions in the top section and then unchecking everything but the "Active process name" and "Show activity indidicator" on the Tab tab
 
 
-## Step 4: Mac specific stuff
+### Step 4: Mac specific stuff
 - Follow the instructions in the "macSetup.org" file
 
-## Step 5: Using the sounds files
+### Step 5: Using the sounds files
 Here is an example
 ``` sh
 echo 'done
@@ -80,6 +82,10 @@ echo 'done
 Sources of audio files
 - [Zapsplat](zapsplat.com)
 
-## Step 6: Additional Vim Setup
+### Step 6: Additional Vim Setup
 Here's some Vim plugins you may want to install
 - https://github.com/tpope/vim-surround
+
+## Scripts
+
+`start.sh` -- run when starting work on Monday, to get everything going
