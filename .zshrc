@@ -65,6 +65,10 @@ function commit-eslint() {
     modified-or-added | xargs npx eslint --fix
 }
 
+function rsinv-ctags() {
+  /usr/local/bin/ctags --languages=-JavaScript --options=$dotfiles/ctags/rsinv.ctags --recurse $1
+}
+
 # git
 
 ## last 20 commit messages

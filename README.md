@@ -20,6 +20,12 @@ My personal config files for a variety of programs that make up my development e
 ```
 brew install tldr
 ```
+6. Universal Ctags
+```
+brew tap universal-ctags/universal-ctags
+brew install --HEAD universal-ctags
+```
+  - On macOS, the built in ctags may remain higher on the PATH, because this should probably only be called from command aliases
 
 ### Step 3: Symlinking
 
