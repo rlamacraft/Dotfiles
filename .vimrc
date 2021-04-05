@@ -73,3 +73,5 @@ setlocal makeprg=.\ $HOME/Documents/GitHub/Dotfiles/eslint
 " comment 'c to here with \c and uncomment with \C
 nnoremap <leader>c :'c,.s/^/\/\//<CR>
 nnoremap <leader>C :'c,.s/^\/\///<CR>
+
+set tags=../.ctags

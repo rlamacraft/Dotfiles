@@ -66,7 +66,7 @@ function commit-eslint() {
 }
 
 function rsinv-ctags() {
-  /usr/local/bin/ctags --languages=-JavaScript --options=$dotfiles/ctags/rsinv.ctags --recurse $1
+  /usr/local/bin/ctags --languages=-JavaScript --options=$dotfiles/ctags/rsinv.ctags --recurse -o ".ctags" $1
 }
 
 # git
