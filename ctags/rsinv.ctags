@@ -4,5 +4,5 @@
 --kinddef-rsinv=e,export,exports
 --kinddef-rsinv=o,observable,observables
 
---regex-rsinv=/^export (default )?(class |function |type )?([a-zA-Z]+)/\3/e/
+--regex-rsinv=/^export (default )?(class |function |type |const )?([a-zA-Z]+)/\3/e/
 --regex-rsinv=/@observable ([a-zA-Z][a-zA-Z0-9]*)/\1/o/
