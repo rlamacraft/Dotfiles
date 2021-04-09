@@ -59,14 +59,8 @@ set statusline+=%f
 set statusline+=%=
 set statusline+=%m
 
-" === PLUGINS ===
-
-" watch for changes
-source $HOME/Documents/Github/Dotfiles/Vim/watchForChanges
-
-" === MAKE ===
-" When :make is invoked, run eslint
-setlocal makeprg=.\ $HOME/Documents/GitHub/Dotfiles/eslint
+" where to find ctags
+set tags=../.ctags
 
 " === MAPPINGS ===
 
@@ -74,4 +68,3 @@ setlocal makeprg=.\ $HOME/Documents/GitHub/Dotfiles/eslint
 nnoremap <leader>c :'c,.s/^/\/\//<CR>
 nnoremap <leader>C :'c,.s/^\/\///<CR>
 
-set tags=../.ctags
