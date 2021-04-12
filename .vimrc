@@ -71,3 +71,7 @@ set tags=../.ctags
 nnoremap <leader>c :'c,.s/^/\/\//<CR>
 nnoremap <leader>C :'c,.s/^\/\///<CR>
 
+" task list management
+" 1. move the task block 2. move cursor to beginning of block 3. clear search
+nnoremap <leader>w :.,/\|=/m/===.WAITING/+1<CR>?^=\|<CR>:nohlsearch<CR>
+nnoremap <leader>a :.,/\|=/m/===.ACTIVE/+1<CR>?^=\|<CR>:nohlsearch<CR>
