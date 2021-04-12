@@ -16,6 +16,9 @@ set wildmenu
 " enable syntax highlighting
 syntax enable
 
+" allow off-screen edited and unsaved buffers
+set hidden
+
 " === SEARCH ===
 
 " show search
