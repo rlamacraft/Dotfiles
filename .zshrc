@@ -44,6 +44,11 @@ ev() {
     emacs "$1" --eval '(setq buffer-read-only t)'
 }
 
+## Gemini
+
+### Download gemini posts from Github
+alias gemini='ssh pi@192.168.0.31 "./gemini/a-h/content/refresh.sh"'
+
 ## ResearchSpace
 alias mvn-drop='mvn clean jetty:run -Denvironment=drop-recreate-db -DRS.devlogLevel=INFO \
     -Dspring.profiles.active=run -Dliquibase.context=dev-test \
