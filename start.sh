@@ -2,7 +2,7 @@
 
 tmux rename-window -t 1 'tasks'
 tmux send-keys -t 1 'cd $HOME/Documents/PersonalDocumentation' C-m
-tmux send-keys -t 1 'vi tasks.org' C-m
+tmux send-keys -t 1 'vi tasks' C-m
 tmux send-keys -t 1 'G'
 
 tmux new-window -t 2 -n 'server'
