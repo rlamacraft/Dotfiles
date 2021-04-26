@@ -73,5 +73,6 @@ nnoremap <leader>C :'c,.s/^\/\///<CR>
 
 " task list management
 " 1. move the task block 2. move cursor to beginning of block 3. clear search
-nnoremap <leader>w :.,/\|=/m/===.WAITING/+1<CR>?^=\|<CR>:nohlsearch<CR>
-nnoremap <leader>a :.,/\|=/m/===.ACTIVE/+1<CR>?^=\|<CR>:nohlsearch<CR>
+nnoremap <leader>w :.,/\|=/+1m/===.WAITING/+1<CR>?^=\|<CR>:nohlsearch<CR>
+nnoremap <leader>a :.,/\|=/+1m/===.ACTIVE/+1<CR>?^=\|<CR>:nohlsearch<CR>
+nnoremap <leader>d :.,/\|=/+1m$<CR>?^=\|<CR>:nohlsearch<CR>
