@@ -9,7 +9,9 @@ bindkey -e
 # Interactive vars
 
 ## Prompt
-PROMPT="> "
+magenta=$(tput setaf 5)
+reset=$(tput sgr0)
+PROMPT="$magenta\$ $reset"
 export PROMPT
 unsetopt PROMPT_SP
 
