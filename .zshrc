@@ -80,7 +80,7 @@ function rsinv-ctags() {
 
 ## last 20 commit messages
 function gl() {
-  git log --pretty="format:  %as %s" -n 20 --graph
+  git log --oneline --graph -n 10
 }
 
 ## print git branch but with numbers
