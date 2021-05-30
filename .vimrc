@@ -19,6 +19,10 @@ syntax enable
 " allow off-screen edited and unsaved buffers
 set hidden
 
+" make 81st column red
+highlight ColorColumn ctermbg=red
+call matchadd('ColorColumn', '\%81v', 100)
+
 " === SEARCH ===
 
 " show search
