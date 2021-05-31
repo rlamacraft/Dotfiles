@@ -82,5 +82,5 @@ nnoremap <leader>a :.,/\|=/+1m/===.ACTIVE/+1<CR>?^=\|<CR>:nohlsearch<CR>
 nnoremap <leader>d :.,/\|=/+1m$<CR>?^=\|<CR>:nohlsearch<CR>
 
 set t_Co=256
-hi CursorLine   cterm=NONE ctermbg=green ctermfg=white guibg=darkred guifg=white
+hi CursorLine   cterm=NONE ctermbg=green ctermfg=NONE guibg=green guifg=white
 set cursorline!
