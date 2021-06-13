@@ -1,9 +1,0 @@
-# -*- mode: snippet -*-
-# name: withStyles
-# key: withStyles
-# --
-const $1 = withStyles(() => ({
-  $3
-}))($2);
-
-$0

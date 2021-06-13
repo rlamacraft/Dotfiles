@@ -1,7 +1,3 @@
-#+TITLE: MacOS Preferences
-#+AUTHOR: Robert Lamacraft
-#+EMAIL: hello@rlamacraft.uk
-
 * Terminal
 ** Import profile.terminal and set it as default
 
@@ -14,24 +10,6 @@
 defaults write com.apple.PowerChime ChimeOnAllHardware -bool true; open /System/Library/CoreServices/PowerChime.app &
 #+END_SRC
 - source: [[https://osxdaily.com/2015/04/15/play-chime-sound-effect-when-macbook-power-connects/][osxdaily]]
-
-* Emacs server
-** Login App
-   - Create an automator application
-   - Add a "Run Shell Script" with the following
-#+begin_src sh
-/usr/local/bin/emacs --daemon
-#+end_src
-   - Save it as "Login - Emacs", perhaps in this cloned repo in a 'bin' directory
-   - Add it to the user's login items
-** Emacsclient App
-   - Create an automator application
-   - Add a "Run Shell Script" with the following
-#+begin_src sh
-/usr/local/bin/emacsclient -n -c --alternate-editor="/usr/local/bin/emacs --daemon" -- "$@"
-#+end_src
-    - Save is as "Emacsclient", perhaps in this cloned repo in a 'bin' directory
-    - Add it to the Dock, perhaps with a pretty icon
 
 * Keybindings
 ** Caps Lock as Escape

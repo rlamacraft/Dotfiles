@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: script-module
-# key: script-module
-# --
-<script type="module" src="$1"></script>
-$0

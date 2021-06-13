@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: useState
-# key: useState
-# --
-const [ $1, set${1:$(capitalizeFirst yas-text)} ] = React.useState($2);$0

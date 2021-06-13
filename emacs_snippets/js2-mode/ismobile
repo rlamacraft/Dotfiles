@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: ismobile
-# key: ismobile
-# --
-import { isMobile } from "react-device-detect";

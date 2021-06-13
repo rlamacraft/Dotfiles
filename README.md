@@ -10,9 +10,7 @@ My personal config files for a variety of programs that make up my development e
 ### Step 2: Tools to install
 1. Zsh, if not installed
 2. Tmux
-3. If using Spacemacs do the following, otherwise check if vim is the vi installation
-  1. Emacs, if not installed
-  2. [Spacemacs](https://www.spacemacs.org)
+3. Vim, if not installed
 4. Typefaces
    - [Space Mono Typeface](https://fonts.google.com/specimen/Space+Mono), changing the terminal when you do
    - [Source Code Pro](https://fonts.google.com/specimen/Source+Code+Pro), for spacemacs defaults
@@ -36,23 +34,6 @@ export dotfiles=$dotfiles
 ln -s $dotfiles/.zshrc $HOME/.zshrc
 ln -s $dotfiles/.zshenv $HOME/.zshenv
 . ~/.zshrc
-```
-
-**spacemacs**
-
-- Spacemacs configuration file, simply symlink as follows
-```
-ln -s $dotfiles/.spacemacs $HOME/.spacemacs
-```
-- Then add the snippets
-```
-rm -r $HOME/.emacs.d/private/snippets
-ln -s $HOME/Documents/Github/Dotfiles/emacs_snippets $HOME/.emacs.d/private/snippets
-```
-- Then start emacs so that all of the dependencies can be downloaded and installed.
-  - There might be an error about an 'tern' dependency; this is a JavaScript dev tool and can be install with the following npm command [source](https://macbookandheels.com/emacs/2019/01/18/tern-binary-not-found/).
-```
-npm install --global tern
 ```
 
 **vim**
