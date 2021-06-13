@@ -58,6 +58,7 @@ npm install --global tern
 **vim**
 ```
 ln -s $dotfiles/.vimrc $HOME/.vimrc
+ln -s $dotfiles/.vim $HOME/.vim
 ```
 
 **tmux**

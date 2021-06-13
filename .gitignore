@@ -3,3 +3,6 @@
 
 # this is for Automator binaries, see macSetup.org
 bin/
+
+# netrw keeps a history of modified dictories, which can be safely lost
+.vim/.netrwhist
