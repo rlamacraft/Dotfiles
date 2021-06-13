@@ -23,6 +23,12 @@ set hidden
 highlight ColorColumn ctermbg=red
 call matchadd('ColorColumn', '\%81v', 100)
 
+" show current line with greenbackground
+"  this is to make it easier to find if relative line should be up or down
+set t_Co=256
+hi CursorLine   cterm=NONE ctermbg=green ctermfg=NONE guibg=green guifg=white
+set cursorline!
+
 " === SEARCH ===
 
 " show search
@@ -47,7 +53,6 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 set autoindent
-
 
 " === STATUS LINE ===
 set statusline=
@@ -80,7 +85,3 @@ nnoremap <leader>C :'c,.s/^\/\///<CR>
 nnoremap <leader>w :.,/\|=/+1m/===.WAITING/+1<CR>?^=\|<CR>:nohlsearch<CR>
 nnoremap <leader>a :.,/\|=/+1m/===.ACTIVE/+1<CR>?^=\|<CR>:nohlsearch<CR>
 nnoremap <leader>d :.,/\|=/+1m$<CR>?^=\|<CR>:nohlsearch<CR>
-
-set t_Co=256
-hi CursorLine   cterm=NONE ctermbg=green ctermfg=NONE guibg=green guifg=white
-set cursorline!

@@ -41,11 +41,6 @@ bandit() {
 	ssh bandit$1@bandit.labs.overthewire.org -p 2220
 }
 
-## Emacs readonly
-ev() {
-    emacs "$1" --eval '(setq buffer-read-only t)'
-}
-
 ## Gemini
 
 ### Download gemini posts from Github
@@ -78,7 +73,7 @@ function rsinv-ctags() {
 
 # git
 
-## last 20 commit messages
+## last 10 commit messages
 function gl() {
   git log --oneline --graph -n 10
 }
