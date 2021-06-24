@@ -1,5 +1,8 @@
 " === GENERAL ===
 
+" leader key
+let mapleader = ","
+
 " relative line numbers
 set relativenumber
 
@@ -85,3 +88,7 @@ nnoremap <leader>C :'c,.s/^\/\///<CR>
 nnoremap <leader>w :.,/\|=/+1m/===.WAITING/+1<CR>?^=\|<CR>:nohlsearch<CR>
 nnoremap <leader>a :.,/\|=/+1m/===.ACTIVE/+1<CR>?^=\|<CR>:nohlsearch<CR>
 nnoremap <leader>d :.,/\|=/+1m$<CR>?^=\|<CR>:nohlsearch<CR>
+
+" JavaScript editing
+nnoremap <leader>m ?^import<CR>oimport<space>Foo<space>from<space>"@material-ui/core/Foo";<esc>:nohlsearch<CR>
+noremap <leader>l oconsole.log();<esc>hi
