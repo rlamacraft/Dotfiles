@@ -11,6 +11,9 @@ My personal config files for a variety of programs that make up my development e
 1. Zsh, if not installed
 2. Tmux
 3. Vim, if not installed
+   - Vim-repeat: https://github.com/tpope/vim-repeat
+   - Vim-surround: https://github.com/tpope/vim-surround
+   - Vim-commentary: https://github.com/tpope/vim-commentary
 4. Typefaces
    - [Space Mono Typeface](https://fonts.google.com/specimen/Space+Mono), changing the terminal when you do
    - [Source Code Pro](https://fonts.google.com/specimen/Source+Code+Pro), for spacemacs defaults

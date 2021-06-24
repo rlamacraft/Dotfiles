@@ -6,3 +6,6 @@ bin/
 
 # netrw keeps a history of modified dictories, which can be safely lost
 .vim/.netrwhist
+
+# see README for how to install packages
+.vim/pack
