@@ -1,6 +1,8 @@
 # Dotfiles
 My personal config files for a variety of programs that make up my development environment
 
+THIS REPO HAS MOVED TO git.sr.ht/~rlamacraft/dotfiles
+
 ## Setup
 
 ### Step 1: Clone this repo 
